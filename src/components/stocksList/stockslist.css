@@ -1,0 +1,156 @@
+
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+ul{
+    position: relative;
+    width: auto;
+    margin: 4px;
+    box-sizing: border-box;  
+}
+ul li{
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+    gap: 20px;
+    color: white;
+    margin: 5px;
+    padding:15px;
+    background: #0f1a0d;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 12px 9px -4px rgba(163,163,163,1);
+    -moz-box-shadow: 2px 12px 9px -4px rgba(163,163,163,1);
+    box-shadow: 2px 12px 9px -4px rgba(163,163,163,1);
+}
+
+.name{
+    color: white;
+    background: #5f007e66;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+.price{
+    color: antiquewhite;
+    background: #02552766;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+.open-price{
+    color: rgb(239, 198, 16);
+    background: #02552766;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+.close-price{
+    color:crimson;
+    background: #02552766;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+.change{
+    color: white;
+}
+
+.price-increase{
+    color: rgb(153, 255, 0);
+
+}
+.price-decrease{
+    color: red;
+}
+
+/* Target laptops with screens wider than 1024px */
+@media screen and (min-width: 1024px) {
+    /* /* Add your CSS styles here for laptops */
+    .title{
+        text-align: center;
+        color: white;font-family: 'Times New Roman', Times, serif;
+        font-weight: 300;
+        font-size: 1.1rem;
+        padding: 5px;
+        background: #141524;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; 
+    }
+}
+  
+  /* Target tablets with screens between 768px and 1023px */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Add your CSS styles here for tablets */
+    .title{
+        text-align: center;
+        color: white;font-family: 'Times New Roman', Times, serif;
+        font-weight: 300;
+        font-size: 1.1rem;
+        padding: 5px;
+        background: #141524;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; 
+    }
+
+  }
+
+  /* Target phones with screens narrower than 767px */
+  @media screen and (max-width: 767px) {
+    /* Add your CSS styles here for phones */
+    .title{
+        text-align: center;
+        color: white;font-family: 'Times New Roman', Times, serif;
+        font-weight: 200;
+        font-size: 0.8rem;
+        padding: 8px;
+        background: #141524;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; 
+    }
+    .body{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+    }
+    ul{
+        position: relative;
+        width: auto;
+        margin: 2px;
+        box-sizing: border-box;  
+    }
+    ul li{
+        display: flex;
+        align-items: center;
+        flex-direction:row;
+        gap: 5px;
+        color: white;
+        margin: 3px;
+        padding:5px;
+        background: #0f1a0d;
+        border-radius: 5px;
+        /* -webkit-box-shadow: 2px 12px 9px -4px rgba(163,163,163,1);
+        -moz-box-shadow: 2px 12px 9px -4px rgba(163,163,163,1);
+        box-shadow: 2px 12px 9px -4px rgba(163,163,163,1); */
+    }
+ 
+    li div{
+        font-size: 0.8rem
+    }
+    .name{
+        font-size: 1.0em;
+    }
+  }
