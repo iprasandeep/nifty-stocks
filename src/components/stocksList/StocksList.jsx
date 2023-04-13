@@ -6,7 +6,6 @@ import "./stockslist.css";
 
 const API_URL = `https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/symbols=${symbols.join(",")}`;
 
-
  const API_KEY = "20e52ad19dmsh5b10113626a9a33p1d5c42jsn8bd4d6620482";
 
 const StocksList = React.memo(() => {
@@ -106,6 +105,3 @@ export default StocksList;
 
 
 
-// const API_URL = `https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=IN&symbols=${symbols.join(",")}`;
-
-// const API_KEY = 'fb7d43fb98msh4a51fafede9df75p196caajsn0833c148279e';

@@ -7,6 +7,12 @@
     --positive-color: #99ff00;
     --negative-color: #ff0000;
     --font-family: 'Times New Roman', Times;
+    --title-color: #00f260;
+    --value-color: white;
+  }
+  
+  .bid_text{
+    color: var(--title-color);
   }
   
   .title {
@@ -16,8 +22,9 @@
     right: 0;
     background-color: #002155;
     text-align: center;
+    font-family: var(--font-family);
     padding:20px;
-    color: white;
+    color: var(--title-color);
     font-size: 1.2rem;
     z-index: 999;
     box-shadow: 2px 5px 5px -2px rgb(22, 20, 20);
@@ -37,10 +44,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-  body {
-    font-family: var(--font-family);
-  }
+
   
   /* Define styles for the body of the webpage */
   .body {
@@ -49,9 +53,11 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    font-family: var(--font-family);
     background-color: var(--bg-color);
     padding: 20px;
     min-height: 100vh;
+    margin-top: 25px;
   }
   
   /* Define styles for an unordered list */
@@ -59,7 +65,7 @@
     margin: 4px;
     box-sizing: border-box;
     width: 0 80%;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   /* Define styles for list items within the unordered list */
@@ -69,10 +75,9 @@
     justify-content: center;
     flex-direction: row;
     gap: 20px;
-    color: white;
+    color:var( --value-color);
     margin: 0px;
-    
-    padding: 15px;
+    padding: 25px;
     background: var(--bg-color);
     border-radius: 5px;
     box-shadow: -1px -1px 5px -3px rgba(265, 253, 223, 150);
@@ -80,60 +85,26 @@
   
   /* Define styles for the name element */
   .name {
-    color: white;
-    background: var(--primary-color)66;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
+    color: var( --value-color);
   }
-  
-  /* Define styles for the price element */
-  .price {
-    color: antiquewhite;
-    background: var(--secondary-color)66;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  /* Define styles for the open price element */
-  .open-price {
-    color: var(--accent-color);
-    background: var(--secondary-color)66;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  /* Define styles for the close price element */
-  .close-price {
-    color: crimson;
-    background: var(--secondary-color)66;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  /* Define styles for the change element */
-  .change {
-    color: white;
-  }
-  
+
   /* Define styles for price increase */
   .price-increase {
     color: var(--positive-color);
   }
-  
-  /* Define styles for price decrease */
   .price-decrease {
     color: var(--negative-color);
+  }
+
+  .name .price .open-price .close-price  .price-decrease .price-decrease {
+    font-size: 15px;
   }
   
   /* Media query for devices with screens narrower than 768px */
   @media (max-width: 512px) {
     .title {
       text-align: center;
-      color: white;
+      color: var(--title-color);
       font-size: 10px;
       font-family: var(--font-family);
       margin-bottom: 20px;
@@ -147,15 +118,13 @@
       padding: 10px;
     }
     
-    .name, .price, .open-price, .close-price {
-      width: 100%;
-    }
   }
   
 /* Media query for devices with screens narrower than 576px */
 @media (max-width: 625px) {
     .title {
         font-size: 16px;
+        color: var(--title-color);
         
       }
     ul li {
@@ -163,12 +132,7 @@
       gap: 10px;
     }
     
-    .name, .price, .open-price, .close-price {
-      font-size: 12px;
+    .name .price .open-price .close-price  .price-decrease .price-decrease {
+      font-size: 10px;
     }
-  }
-
-
-  .index{
-    color: #effc10;
   }
