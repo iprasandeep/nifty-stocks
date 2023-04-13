@@ -4,11 +4,14 @@ import { symbols } from "../../stockSymbols";
 import "./stockslist.css";
 
 
-const API_URL = `https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/symbols=${symbols.join(",")}`;
+// const API_URL = `https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/symbols=${symbols.join(",")}`;
 
- const API_KEY = "20e52ad19dmsh5b10113626a9a33p1d5c42jsn8bd4d6620482";
+//  const API_KEY = "20e52ad19dmsh5b10113626a9a33p1d5c42jsn8bd4d6620482";
 
-const StocksList = React.memo(() => {
+  const API_URL = `https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=IN&symbols=${symbols.join(",")}`;
+  const API_KEY = '20e52ad19dmsh5b10113626a9a33p1d5c42jsn8bd4d6620482';
+
+  const StocksList = React.memo(() => {
   const [stocks, setStocks] = useState([]);
   const [error, setError] = useState("");
 
@@ -18,14 +21,14 @@ const StocksList = React.memo(() => {
       url: API_URL,
       headers: {
         "X-RapidAPI-Key": API_KEY,
-        "X-RapidAPI-Host":  'yahoo-finance15.p.rapidapi.com',
+        "X-RapidAPI-Host": 'yh-finance.p.rapidapi.com',
       },
       qs: {
         symbols: symbols.join(","),
       },
     })
       .then((response) => {
-        const newStocks = response.data.map((stock) => ({
+        const newStocks = response.data.quoteResponse.result.map((stock) => ({
           name: stock.shortName,
           price: stock.regularMarketPrice.toFixed(2),
           openPrice: stock.regularMarketOpen.toFixed(2),
@@ -41,13 +44,11 @@ const StocksList = React.memo(() => {
   }, []);
 
   useEffect(() => {
-    const debounce = setTimeout(() => {
+    const interval = setInterval(() => {
       fetchData();
-    }, 10000);
-
-    return () => {
-      clearTimeout(debounce);
-    };
+    }, 10000); // 10 Sec
+  
+    return () => clearInterval(interval);
   }, [fetchData]);
 
   return (
